@@ -1,0 +1,37 @@
+<!-- views/add.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand-title">Employee CRUD</a>
+        <a href="/">Home</a>
+        <a href="/add">Add Employee</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Add New Employee</h1>
+            </div>
+            <div class="card-body">
+                <form action="/add" method="POST">
+                    <!-- Include input fields for all Employee fields -->
+                    <input type="text" name="employeeId" placeholder="Employee ID" required><br>
+                    <input type="text" name="name" placeholder="Name" required><br>
+                    <input type="email" name="email" placeholder="Email" required><br>
+                    <input type="text" name="designation" placeholder="Designation" required><br>
+                    <input type="text" name="branch" placeholder="Branch" required><br>
+                    <input type="text" name="phone" placeholder="Phone" required><br>
+                    <input type="text" name="state" placeholder="State" required><br>
+                    <button class="btn" type="submit">Add Employee</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

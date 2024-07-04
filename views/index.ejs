@@ -1,0 +1,57 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Employees</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand-title">Employee CRUD</a>
+        <a href="/">Home</a>
+        <a href="/add">Add Employee</a>
+    </nav>
+    <div class="containerList">
+        <div class="card">
+            <div class="card-header">
+                <h2>List of Employees</h2>
+            </div>
+            <div class="card-body">
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Designation</th>
+                            <th>Branch</th>
+                            <th>Phone</th>
+                            <th>State</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% employees.forEach(employee => { %>
+                            <tr>
+                                <td><%= employee.employeeId %></td>
+                                <td><%= employee.name %></td>
+                                <td><%= employee.email %></td>
+                                <td><%= employee.designation %></td>
+                                <td><%= employee.branch %></td>
+                                <td><%= employee.phone %></td>
+                                <td><%= employee.state %></td>
+                                <td>
+                                    <a href="/edit/<%= employee._id %>">Edit</a>
+                                    <a href="/delete/<%= employee._id %>">Delete</a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

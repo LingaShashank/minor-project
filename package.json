@@ -1,0 +1,26 @@
+{
+  "name": "minor-project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "dev": "nodemon main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-sanitizer": "^1.0.5",
+    "install": "^0.12.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.20"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

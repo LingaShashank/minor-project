@@ -1,0 +1,39 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand-title">Employee CRUD</a>
+        <a href="/">Home</a>
+        <a href="/add">Add Employee</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Edit Employee</h1>
+            </div>
+            <div class="card-body">
+                <form action="/edit/<%= employee._id %>" method="POST">
+                    <input type="text" name="employeeId" placeholder="Employee ID" value="<%= employee.employeeId %>" required><br>
+                    <input type="text" name="name" placeholder="Name" value="<%= employee.name %>" required><br>
+                    <input type="email" name="email" placeholder="Email" value="<%= employee.email %>" required><br>
+                    <input type="text" name="designation" placeholder="Designation" value="<%= employee.designation %>" required><br>
+                    <input type="text" name="branch" placeholder="Branch" value="<%= employee.branch %>" required><br>
+                    <input type="text" name="phone" placeholder="Phone" value="<%= employee.phone %>" required><br>
+                    <input type="text" name="state" placeholder="State" value="<%= employee.state %>" required><br>
+                    <button class="btn" type="submit">Update Employee</button>
+                </form>
+            </div>
+        </div>
+    
+            
+        </form>
+    </div>
+</body>
+</html>
