@@ -1,9 +1,7 @@
-// routes/employeeRoutes.js
 const express = require('express');
 const router = express.Router();
 const Employee = require('../models/employee');
 
-// List all employees
 router.get('/', async (req, res) => {
     try {
         const employees = await Employee.find();
@@ -14,12 +12,10 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Display form to add new employee
 router.get('/add', (req, res) => {
     res.render('add');
 });
 
-// Add new employee
 router.post('/add', async (req, res) => {
     const { employeeId, name, email, designation, branch, phone, state } = req.body;
     const newEmployee = new Employee({ employeeId, name, email, designation, branch, phone, state });
@@ -33,7 +29,6 @@ router.post('/add', async (req, res) => {
     }
 });
 
-// Display form to edit employee
 router.get('/edit/:id', async (req, res) => {
     const { id } = req.params;
 
@@ -46,7 +41,6 @@ router.get('/edit/:id', async (req, res) => {
     }
 });
 
-// Update employee
 router.post('/edit/:id', async (req, res) => {
     const { id } = req.params;
     const { employeeId, name, email, designation, branch, phone, state } = req.body;
@@ -60,7 +54,6 @@ router.post('/edit/:id', async (req, res) => {
     }
 });
 
-// Delete employee
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
 

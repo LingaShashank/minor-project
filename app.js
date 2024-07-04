@@ -8,8 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = 'mongodb+srv://admin:admin@e-commerce.jieynev.mongodb.net/?retryWrites=true&w=majority&appName=minor-project'; // Your MongoDB URI
 
-// Connect to MongoDB
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true,    
+  useUnifiedTopology: true, });
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
 });
